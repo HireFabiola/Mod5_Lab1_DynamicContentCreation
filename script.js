@@ -20,6 +20,7 @@ function removeItem(event) {
     const price = parseFloat(item.dataset.price);
     updateTotalPrice(-price);
     item.remove();
+    clearInputs();
 }
 
 // Function to add product 
@@ -35,7 +36,7 @@ function handleAddButton(event) {
         alert("You must enter a product AND a price");
         return;
     }
-    else if (productPrice < 0){
+    else if (productPrice < 0) {
         alert("Price cannot be negative");
     }
 
@@ -46,13 +47,14 @@ function handleAddButton(event) {
     removeButton.addEventListener('click', removeItem);
 
     li.dataset.price = productPrice; //store price for later use
-    
+
     li.append(productName + "  $" + productPrice.toFixed(2));
     li.appendChild(removeButton);
 
     cart.appendChild(li);
     console.log(cart);
     updateTotalPrice(productPrice);
+    clearInputs();
 }
 
 // Function to update the total price
@@ -61,3 +63,8 @@ function updateTotalPrice(amount) {
     totalPriceSpan.textContent = totalPrice.toFixed(2);
 }
 
+// Function to clear input fields
+function clearInputs() {
+    productNameInput.value = "";
+    productPriceInput.value = "";
+}
