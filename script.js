@@ -1,16 +1,12 @@
 const productNameInput = document.getElementById('product-name');
 const productPriceInput = document.getElementById('product-price');
 const addProductButton = document.getElementById('add-product');
-const cart = document.querySelector('#cart');
+const cart = document.getElementById('cart');
 const totalPriceSpan = document.getElementById('total-price');
-let productName = productNameInput.value;
-console.log(productName);
-
-console.log(cart.childElementCount);
 
 let totalPrice = 0;
 
-addProductButton.addEventListener("click", handleClick);
+addProductButton.addEventListener('click', handleAddButton());
 
 // Function to update the total price
 function updateTotalPrice(amount) {
@@ -26,19 +22,9 @@ function removeItem(event) {
     item.remove();
 }
 
-// Function to handle Add Product button
-function handleClick(event) {
-    const fragmentContainer = document.createDocumentFragment();
-   
-    for (let i = 0; i <= cart.childElementCount; i++) {
-        console.log("I should at least be here");
-        console.log(i);
-        const li = document.createElement("li");
-        li.innerText = productNameInput.value;
-        console.log(li);
-        fragmentContainer.appendChild(li);
-        console.log(fragmentContainer);
-    }
-
-    cart.appendChild(fragmentContainer);
+// Function to add product 
+function handleAddButton(event) {
+    console.log("I made it here");
+    const productName = productNameInput.value;
+    console.log(productName);
 }
