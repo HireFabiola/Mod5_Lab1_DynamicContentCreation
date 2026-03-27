@@ -35,6 +35,9 @@ function handleAddButton(event) {
         alert("You must enter a product AND a price");
         return;
     }
+    else if (productPrice < 0){
+        alert("Price cannot be negative");
+    }
 
     // Update list with product name and price
     const li = document.createElement("li")
@@ -43,7 +46,8 @@ function handleAddButton(event) {
     removeButton.addEventListener('click', removeItem);
 
     li.dataset.price = productPrice; //store price for later use
-    li.append(productName + "  $" + productPrice);
+    
+    li.append(productName + "  $" + productPrice.toFixed(2));
     li.appendChild(removeButton);
 
     cart.appendChild(li);
