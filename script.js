@@ -6,7 +6,7 @@ const totalPriceSpan = document.getElementById('total-price');
 
 let totalPrice = 0;
 
-addProductButton.addEventListener('click', handleAddButton());
+addProductButton.addEventListener('click', handleAddButton);
 
 // Function to update the total price
 function updateTotalPrice(amount) {
@@ -27,4 +27,7 @@ function handleAddButton(event) {
     console.log("I made it here");
     const productName = productNameInput.value;
     console.log(productName);
+    const li = document.createElement("li");
+    li.textContent = productName;
+    cart.appendChild(li);
 }
