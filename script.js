@@ -26,8 +26,10 @@ function removeItem(event) {
 function handleAddButton(event) {
     console.log("I made it here");
     const productName = productNameInput.value;
+    const productPrice = productPriceInput.value;
+    console.log(productPrice);
     console.log(productName);
-    const li = document.createElement("li");
-    li.textContent = productName;
+    const li = document.createElement("li")
+    li.textContent = productName + " $" + productPrice;
     cart.appendChild(li);
 }
