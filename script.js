@@ -31,7 +31,7 @@ function handleAddButton(event) {
     console.log(productPrice);
 
     // Check to ensure neither field is empty
-    if ((productName === "") || (productPrice === "")) {
+    if ((productName === "") || isNaN(productPrice)) {
         alert("You must enter a product AND a price");
         return;
     }
