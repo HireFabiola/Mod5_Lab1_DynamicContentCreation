@@ -5,8 +5,8 @@ const cart = document.querySelector('#cart');
 const totalPriceSpan = document.getElementById('total-price');
 let productName = productNameInput.value;
 console.log(productName);
-console.log(cart, typeof cart);
-console.log(cart);
+
+console.log(cart.childElementCount);
 
 let totalPrice = 0;
 
@@ -28,18 +28,16 @@ function removeItem(event) {
 
 // Function to handle Add Product button
 function handleClick(event) {
-    console.log("just entered handleClick function");
-     console.log(cart.length);
     const fragmentContainer = document.createDocumentFragment();
    
-
-    for (let i = 0; i < cart.length; i++) {
+    for (let i = 0; i <= cart.childElementCount; i++) {
         console.log("I should at least be here");
         console.log(i);
-        console.log(cart.length);
         const li = document.createElement("li");
         li.innerText = productNameInput.value;
+        console.log(li);
         fragmentContainer.appendChild(li);
+        console.log(fragmentContainer);
     }
 
     cart.appendChild(fragmentContainer);
