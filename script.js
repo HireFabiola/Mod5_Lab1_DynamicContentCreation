@@ -17,8 +17,8 @@ function removeItem(event) {
     console.log("Am I here?");
     const item = event.target.closest('li');
     console.log(item);
-    // const price = parseFloat(item.dataset.price);
-    // updateTotalPrice(-price);
+    const price = parseFloat(item.dataset.price);
+    updateTotalPrice(-price);
     item.remove();
 }
 
@@ -42,6 +42,7 @@ function handleAddButton(event) {
     removeButton.textContent = "Remove";
     removeButton.addEventListener('click', removeItem);
 
+    li.dataset.price = productPrice; //store price for later use
     li.append(productName + "  $" + productPrice);
     li.appendChild(removeButton);
 
