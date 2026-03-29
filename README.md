@@ -115,8 +115,3 @@ Persist cart data using localStorage
 Add item subtotal calculations
 Improve UI styling and responsiveness
 Implement edit/update functionality for items
-Project Structure
-project/
-├── index.html
-├── styles.css
-└── script.js
